@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.jd_mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+
+
+  .content {
+    width: 300px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 200px auto;
+    padding: 10px;
+
+
+    .title {
+      height: 80px;
+      border-bottom: 1px solid @borderColor;
+    }
+
+    .cancel,
+    .confirm {
+      width: 120px;
+      height: 40px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid @borderColor;
+    }
+
+    .confirm {
+      background-color: @jd_color;
+      color: #fff;
+      border-color: @jd_color;
+    }
+    
+    .cancel {
+      background-color: #fff;
+      border-color: @borderColor;
+      color: @borderColor;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.jd_cart {
+  margin-top: 10px;
+  background-color: #fff;
+}
+.jd_cart .cart_title {
+  height: 34px;
+  border-top: 1px solid ;
+}

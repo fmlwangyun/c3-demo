@@ -1,0 +1,207 @@
+@charset "UTF-8";
+.jd_container {
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+.jd_header {
+  height: 44px;
+  background: linear-gradient(#fff, #e0e0e0);
+  position: relative;
+}
+.jd_header .icon_back,
+.jd_header .icon_menu {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  padding: 12px;
+  background-clip: content-box;
+  background-origin: content-box;
+}
+.jd_header .icon_back {
+  left: 0;
+  background-position: -20px 0;
+}
+.jd_header .icon_menu {
+  right: 0;
+  background-position: -60px 0;
+}
+.jd_header .title {
+  height: 44px;
+  margin: 0 44px;
+}
+.jd_header .title h3 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 44px;
+  font-size: 16px;
+}
+.jd_safe {
+  height: 34px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  line-height: 32px;
+  text-align: center;
+  background-color: #fff;
+}
+.jd_safe p {
+  display: inline-block;
+  padding-left: 30px;
+  position: relative;
+}
+.jd_safe p:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+  background: url(../images/safe_icon.png) no-repeat;
+  background-size: 18px;
+}
+.jd_checkbox {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-position: -180px -89px;
+  top: 7px;
+  left: 7px;
+}
+.jd_checkbox.checked {
+  background-position: -180px -69px;
+}
+.jd_cart {
+  margin-top: 10px;
+  background-color: #fff;
+}
+.cart_title {
+  height: 34px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  line-height: 32px;
+  padding-left: 32px;
+  position: relative;
+}
+.cart_title .title_left {
+  padding-left: 20px;
+  position: relative;
+}
+.cart_title .title_left:before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 9px;
+  top: 12px;
+  left: 4px;
+  background: url("../images/jd-sprites.png") no-repeat 0 0;
+  background-size: 120px;
+}
+.cart_title .title_right {
+  color: #f16868;
+  margin-right: 10px;
+}
+.cart_content {
+  height: 100px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 32px;
+  position: relative;
+}
+.cart_content .content_left {
+  width: 80px;
+  height: 100px;
+  float: left;
+}
+.cart_content .content_left img {
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+}
+.cart_content .content_right {
+  height: 100px;
+  overflow: hidden;
+  margin-left: 90px;
+  padding-top: 10px;
+}
+.cart_content .count_left {
+  height: 32px;
+  width: 120px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+.cart_content .count_left span {
+  float: left;
+  width: 33.33%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+.cart_content .count_left input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+.cart_content .count_right {
+  width: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.cart_content .delete_t {
+  width: 18px;
+  height: 4px;
+  background: url("../images/delete_up.png");
+  background-size: cover;
+  position: relative;
+  top: 2px;
+}
+.cart_content .delete_c {
+  width: 18px;
+  height: 18px;
+  background: url("../images/delete_down.png");
+  background-size: cover;
+}
+.jd_mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+.jd_mask .content {
+  width: 300px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 200px auto;
+  padding: 10px;
+}
+.jd_mask .content .title {
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+}
+.jd_mask .content .cancel,
+.jd_mask .content .confirm {
+  width: 120px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.jd_mask .content .confirm {
+  background-color: #f16868;
+  color: #fff;
+  border-color: #f16868;
+}
+.jd_mask .content .cancel {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #ccc;
+}

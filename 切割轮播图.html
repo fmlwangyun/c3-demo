@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      width: 560px;
+      height: 380px;
+      /*border: 1px solid #000;*/
+      margin: 100px auto;
+      position: relative;
+    }
+
+    ul {
+      width: 20%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      float: left;
+    }
+
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    li:nth-child(1) {
+      background-image: url(images/01.jpg);
+      transform: translateZ(190px);
+    }
+
+    li:nth-child(2) {
+      background-image: url(images/02.jpg);
+      transform: rotateX(90deg) translateZ(190px);
+    }
+
+    li:nth-child(3) {
+      background-image: url(images/03.jpg);
+      transform: rotateX(180deg) translateZ(190px);
+    }
+
+    li:nth-child(4) {
+      background-image: url(images/01.jpg);
+      transform: rotateX(270deg) translateZ(190px);
+    }
+
+    ul:nth-child(2) li {
+      background-position: -112px 0;
+    }
+
+    ul:nth-child(3) li {
+      background-position: -224px 0;
+    }
+
+    ul:nth-child(4) li {
+      background-position: -336px 0;
+    }
+
+    ul:nth-child(5) li {
+      background-position: -448px 0;
+    }
+
+    .prev,
+    .next {
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #f91;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      font: 400 32px/100px "宋体";
+    }
+
+    .prev {
+      left: -100px;
+    }
+
+    .next {
+      right: -100px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <a href="javascript:void(0)" class="prev">上一页</a>
+  <a href="javascript:void(0)" class="next">下一页</a>
+</div>
+
+
+<script>
+
+  var prev = document.querySelector(".prev");
+  var next = document.querySelector(".next");
+  var uls = document.querySelectorAll(".box>ul");
+  var lock = true;
+
+  var index = 0;
+  next.onclick = function () {
+    if(lock) {
+      lock = false;
+      index--;
+      //设置所有的ul
+      for (var i = 0; i < uls.length; i++) {
+        uls[i].style.transition = "all .5s " + 0.1 * i + "s";
+        uls[i].style.transform = "rotateX(" + 90 * index + "deg)";
+      }
+    }
+
+  }
+
+  prev.onclick = function () {
+    index++;
+    //设置所有的ul
+    for (var i = 0; i < uls.length; i++) {
+      uls[i].style.transition = "all .5s " + 0.1 * i + "s";
+      uls[i].style.transform = "rotateX(" + 90 * index + "deg)";
+    }
+  }
+
+
+  //在最后一个ul过渡结束时开锁
+  //给最后一个ul注册一个过渡结束事件
+  uls[uls.length-1].addEventListener("transitionend", function () {
+    console.log("过渡结束");
+    lock = true;//开锁
+  })
+
+</script>
+
+</body>
+</html>
